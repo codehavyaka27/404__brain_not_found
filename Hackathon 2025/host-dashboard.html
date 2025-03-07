@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - College Event Hub</title>
+    <!-- Main site styling -->
+    <!-- <link rel="stylesheet" href="/Assets/CSS/style.css" /> -->
+    <!-- Dashboard-specific styling -->
+     <link rel="stylesheet" href="/Assets/CSS/Styles.css">
+    <link rel="stylesheet" href="/Assets/CSS/dashboard.css" />
+    <!-- Dashboard-specific JavaScript (if needed) -->
+    <script src="/Assets/JS/dashboard.js" defer></script>
+  </head>
+  <body>
+    <!-- Header Section with Navigation and Profile Dropdown -->
+    <header>
+      <div class="header-container">
+        <div class="logo"><a href="/index_1.html"><img class="head-img" src="/Assets/Images/cal.png" alt="">College Events</a></div>
+        <nav>
+          <ul>
+            <li><a href="/events.html">Events</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="/leaderboard.html">Leaderboard</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+          <span class="notification">🔔</span>
+          <span class="profile"><a href="/user-dashboard.html">👤</a></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Container for the Sidebar and Main Content -->
+    <div class="dashboard-container">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <ul>
+          <li><a href="host-dashboard.html" class="active">Profile</a></li>
+          <li><a href="my-events.html">My Events</a></li>
+          <li><a href="add-event.html">Add Events</a></li>
+          <li><a href="awards.html">Awards</a></li>
+          <li><a href="settings.html">Settings</a></li>
+          <li><a href="/signout.html">Log Out</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Dashboard Content -->
+      <main class="dashboard-main">
+        <!-- Profile Summary Section -->
+        <section class="profile-summary">
+          <h1>Welcome, Jane Doe</h1>
+          <div class="profile-info">
+            <img src="/Assets/Images/profile.jpg" alt="Jane Doe" class="profile-pic" />
+            <div class="details">
+              <p><strong>Name:</strong> Jane Doe</p>
+              <p><strong>Department:</strong> Computer Science</p>
+              <p><strong>Email:</strong> jane.doe@example.com</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Statistics Cards Section -->
+        <section class="stats-cards">
+          <div class="card">
+            <h2>Awards Won</h2>
+            <p class="stat-number">3</p>
+            <p class="stat-description">Recognitions for excellence and innovation.</p>
+          </div>
+          <div class="card">
+            <h2>Events Participated</h2>
+            <p class="stat-number">7</p>
+            <p class="stat-description">Tech meet-ups, workshops, and seminars.</p>
+          </div>
+          <div class="card">
+            <h2>Registered Events</h2>
+            <p class="stat-number">2</p>
+            <p class="stat-description">Events you have registered for.</p>
+          </div>
+          <div class="card">
+            <h2>Activity Points</h2>
+            <p class="stat-number">78</p>
+            <p class="stat-description">Points earned from various activities.</p>
+          </div>
+        </section>
+
+        <!-- Recent Activity Section -->
+        <section class="recent-activity">
+          <h2>Recent Activity</h2>
+          <ul class="activity-list">
+            <li>
+              <span class="activity-time">11:15 AM</span> - Joined the <strong>Data Science Seminar</strong>.
+            </li>
+            <li>
+              <span class="activity-time">10:00 AM</span> - Won the <strong>Best Innovator</strong> award.
+            </li>
+            <li>
+              <span class="activity-time">Yesterday</span> - Updated profile information.
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2025 College Event Hub. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

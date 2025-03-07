@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upcoming Events</title>
+    <link rel="stylesheet" href="/Assets/CSS/style.css" />
+    
+    <style>
+      /* Minimal styling added here for demonstration purposes */
+      .event-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        margin: auto;
+      }
+      .event-card {
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .event-card:hover {
+        transform: scale(1.05);
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      header {
+        text-align: center;
+        padding: 20px;
+      }
+      header nav a {
+        margin: 0 10px;
+        color: #007bff;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>College Event Hub</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">HOME</a></li>
+          <li class="upward"><a href="upcoming.html">UPCOMING EVENTS</a></li>
+          <li class="forward"><a href="gallery.html">GALLERY</a></li>
+          <li class="forward"><a href="contact.html">CONTACT</a></li>
+          <li class="profile dropdown">
+            <a href="#" id="profile-img"><img src="/Assets/Images/profile.jpg" alt="Profile Picture"></a>
+            <div class="dropdown-content">
+              <a href="/dashboard.html">Profile</a>
+              <a href="/settings.html">Settings</a>
+              <a href="/logout.html">Sign out</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="upcoming">
+        <h2 style="text-align: center;">Upcoming Events</h2>
+        <div class="event-grid" id="upcoming-events">
+          <!-- Event cards will be inserted here dynamically -->
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const upcomingEvents = [
+          {
+            id: "ai-workshop",
+            name: "AI Workshop",
+            hostedBy: "CSE",
+            date: "April 5, 2025",
+          },
+          {
+            id: "business-contest",
+            name: "Business Plan Contest",
+            hostedBy: "MBA",
+            date: "April 10, 2025",
+          },
+          {
+            id: "robotics-challenge",
+            name: "Robotics Challenge",
+            hostedBy: "ECE",
+            date: "April 15, 2025",
+          },
+          {
+            id: "cyber-security-seminar",
+            name: "Cyber Security Seminar",
+            hostedBy: "IT",
+            date: "April 20, 2025",
+          },
+          {
+            id: "design-expo",
+            name: "Design Expo",
+            hostedBy: "Architecture",
+            date: "April 25, 2025",
+          },
+          {
+            id: "literature-fest",
+            name: "Literature Fest",
+            hostedBy: "English",
+            date: "May 1, 2025",
+          },
+          // You can add more events here...
+        ];
+
+        const eventGrid = document.getElementById("upcoming-events");
+        upcomingEvents.forEach((event) => {
+          // Create a clickable link for each event that directs to event-details.html with event id in query string
+          const link = document.createElement("a");
+          link.href = `event-details.html?event=${event.id}`;
+          
+          // Create the event card element
+          const card = document.createElement("div");
+          card.className = "event-card";
+          card.innerHTML = `
+            <h3>${event.name}</h3>
+            <p>Hosted by: ${event.hostedBy}</p>
+            <p>Date: ${event.date}</p>
+          `;
+          
+          // Append the card to the link, then add to the grid
+          link.appendChild(card);
+          eventGrid.appendChild(link);
+        });
+      });
+    </script>
+  </body>
+</html>

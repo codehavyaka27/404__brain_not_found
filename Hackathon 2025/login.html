@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - College Event Hub</title>
+    <!-- Main site styling -->
+    <link rel="stylesheet" href="/Assets/CSS/style.css" />
+    <!-- Login-specific styling (optional) -->
+    <link rel="stylesheet" href="/Assets/CSS/login.css" />
+    <style>
+      .login-container {
+        max-width: 400px;
+        margin: 5% auto;
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .login-header,
+      .login-footer {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        justify-content: space-evenly;
+      }
+      .login-header .logo {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .login-header .logo-img {
+        height: 90px;
+        margin-bottom: 0.5rem;
+        border-radius: 50%;
+      }
+      .login-form-section h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #2c3e50;
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      .btn {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #27ae60;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 0.5rem;
+      }
+      .btn:hover {
+        background-color: #219653;
+      }
+      .signup-link {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+      .signup-link a {
+        color: #27ae60;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <header class="login-header">
+        <a href="#" class="logo">
+          <img src="/Assets/Images/logo.png" alt="College Event Hub Logo" class="logo-img" />
+          <span>College Event Hub</span>
+        </a>
+      </header>
+      <main>
+        <section class="login-form-section">
+          <h1>Login</h1>
+          <form id="login-form" action="#" method="post">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            </div>
+            <div class="form-group">
+              <label for="usn">USN:</label>
+              <input type="text" id="usn" name="usn" placeholder="Enter your USN" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" placeholder="Enter your password" required />
+            </div>
+            <div class="form-group">
+              <label for="user-type">Login as:</label>
+              <select id="user-type" name="user-type" required>
+                <option value="normal">Normal User</option>
+                <option value="host">Host</option>
+              </select>
+            </div>
+            <button type="submit" class="btn">Log In</button>
+          </form>
+          <p class="signup-link">
+            Don't have an account? <a href="signup.html">Sign Up</a>
+          </p>
+        </section>
+      </main>
+      <footer class="login-footer">
+        <p>&copy; 2025 College Event Hub. All rights reserved.</p>
+      </footer>
+    </div>
+    <script>
+      document.getElementById('login-form').addEventListener('submit', function (event) {
+        event.preventDefault(); 
+        const userType = document.getElementById('user-type').value;
+        if (userType === 'host') {
+          window.location.href = 'host-dashboard.html';
+        } else {
+          window.location.href = 'user-dashboard.html';
+        }
+      });
+    </script>
+  </body>
+</html>
